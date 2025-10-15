@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amscd,amssymb,mathrsfs}
+\usepackage{latexsym,epsf,epsfig}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\sU}{\mathscr U}
+%The above set the parameters adjust the margins. There are many ways to do this, and frankly, what is above is not the best. However, it will work the time being.
+\usepackage{sectsty}
+\usepackage[parfill]{parskip} %avoid indent when skipping lines
+
+
+
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{soul}% for underlines
+\usepackage{xcolor,colortbl} % for cell colors
+\usepackage{changepage,threeparttable} % for wide tables
+
+
+\title{ MATH 300: Homework 1}
+\author{ Aren Vista }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+\section{Problem 1}
+
+Prove $S = A \cap (B \cup C), T = (A \cap B) \cup (A \cap C)$ are subsets 
+
+\begin{proof}
+    $\text{Suppose }x \in S \implies x \in A \land (x \in B \lor x \in C)$
+
+    $\equiv (x \in A \land x \in B) \lor (x \in A \land x \in C)$
+
+    $\equiv (A \cap B) \cup (A \cap C ) \implies S \subset T$
+
+    $\text{Suppose }x \in T \implies x \in (A \cap B) \lor x \in (A \cap C)$
+
+    $\equiv x \in A \land x \in (B \lor C)$
+
+    $\equiv A \cap (B \cup C) \implies T \subset S$
+
+    $\therefore S=T$
+\end{proof}
+
+
+\end{document}
+
