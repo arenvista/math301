@@ -36,11 +36,151 @@
 \pagebreak
 
 \section*{Question 1}
+\begin{proof} Show that $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+    \subsection*{Case 1: $A \cap (B \cup C) \subset (A \cap B) \cup (A \cap C)$}
+    Consider an arbtrary element x: \[
+        x \in A \cap (B \cup C) \implies x \in A \land x \in (B \cup C)
+    \]
+    Logically: \[
+        x \in A \land x \in (B \cap C) \implies x \in A \land (x \in B \lor x \in C)
+    \]
+    By distributive property \[
+        x \in A \land (x \in B \lor x \in C) \equiv (x \in A \land x \in C) \lor (x \in A \land x \in B)
+    \]
+    Redefinig as logical statment to set inclusion yields: \[
+        (x \in A \land x \in C) \lor (x \in A \land x \in B) \implies x \in (A \cap C) \cup (A \cap B)
+    \]
+    As x is an arbtrary element Case 1: $A \cap (B \cup C) \subset (A \cap B) \cup (A \cap C)$ holds
+
+    \subsection*{Case 2: $(A \cap B) \cup (A \cap C) \subset A \cap (B \cup C)$}
+    Notice all implications can be done in reverse as: \\
+    Consider an arbtrary element x: \[
+        x \in A \cap (B \cup C) \leftrightarrow x \in A \land x \in (B \cup C)
+    \]
+    Logically: \[
+        x \in A \land x \in (B \cap C) \leftrightarrow x \in A \land (x \in B \lor x \in C)
+    \]
+    By distributive property \[
+        x \in A \land (x \in B \lor x \in C) \equiv (x \in A \land x \in C) \lor (x \in A \land x \in B)
+    \]
+    Redefinig as logical statment to set inclusion yields: \[
+        (x \in A \land x \in C) \lor (x \in A \land x \in B) \leftrightarrow x \in (A \cap C) \cup (A \cap B)
+    \]
+    Thus as x is an arbtrary element Case 2: $(A \cap B) \cup (A \cap C) \subset A \cap (B \cup C)$ holds
+    \subsection*{Conclusion}
+    As Case 1,2 holds the two sets must be equal
+\end{proof}
+
 \section*{Question 2}
+\begin{proof}Show that is $f: A \rightarrow B$ is surjective and $H \subseteq B$ then $f(f^{-1}(H)) = H$. \\
+    Suppose $f: A \rightarrow B$ is surjective and $H \subseteq B$ \\
+    Observe $f: A \rightarrow B$\[
+        f = \{f(a) : a \in A \} \implies f(a) = b, b \in B
+    \]
+    As $f$ is surjective\[
+        \forall ~b \in B, \exists ~a \in A \ni f(a) = b
+    \]
+    Observe \[
+        H \subseteq B \implies \forall ~h \in H, h \in B
+    \]
+    Thus for some $X \subset A$ \[
+        f(X) = {f(x) | x \in X} = H
+    \]
+    By definition of pre-image \[
+        f^{-1}(H) = {x | f(x) \in H} = X
+    \]
+    Thus \[
+        f(f^{-1}(H)) = f(X) = H
+    \]
+\end{proof}
+
+\begin{proof}Show that is $f: A \rightarrow B$ then $f(f^{-1}(H)) \subseteq H$ \\
+    Suppose $f: A \rightarrow B$
+    Observe $f: A \rightarrow B$\[
+        f = \{f(a) : a \in A \} \implies f(a) = b, b \in B
+    \]
+    As $f$ is not surjective\[
+        \exists ~b \in B \ni \forall ~a \in A, f(a) \neq b
+    \]
+    Consider some $X \subset A$ \[
+        f(X) = {f(x) \in H | x \in X}
+    \]
+    As $f$ is not surjective $f(X)$ may not equal $H$ \\
+    Thus there may exists an $h \in H$ s.t. $f^{-1}(h)$ is not defined. \\
+    Therefore, $f(f^{-1}(H)) \subseteq H$ 
+\end{proof}
+
 \section*{Question 3}
+Theorem 1.1.14: 
+\begin{itemize} 
+    \item[] Let $f: A \rightarrow B$ be a function
+    \item[] Let $g: B \rightarrow C$ be function
+    \item[] Let $H \subset C$
+    \item[] Prove $(gof)^{-1}(H) = f^{-1}(g^{-1}(H))$
+\end{itemize}
+
+\begin{proof} $ = f^{-1}(g^{-1}(H))$
+    Let $f: A \rightarrow B$ be a function \[
+        f = \{f(a) \in B : a \in A\}
+    \]
+    Let $g: B \rightarrow C$ be functions\[
+        g = \{g(b) \in C : b \in B\}
+    \]
+    Let $H \subset C$ \[
+        \forall ~h \in H, h \in C
+    \]
+    \subsection*{Case 1: $(gof)^{-1}(H) \subset f^{-1}(g^{-1}(H))$}
+    Let $x$ be an arbitrary element $x \in (gof)^{-1}(H)$
+    \begin{align*}
+        x \in (g \circ f)^{-1}(H) & \iff (g \circ f)(x) \in H 
+            && \text{(By definition of inverse image)} \\
+        & \iff g(f(x)) \in H
+            && \text{(By definition of composition)} \\
+        & \iff f(x) \in g^{-1}(H) 
+            && \text{(By definition of inverse image for } g \text{)} \\
+        & \iff x \in f^{-1}(g^{-1}(H)) 
+            && \text{(By definition of inverse image for } f \text{)}
+    \end{align*}
+    \subsection*{Case 2: $f^{-1}(g^{-1}(H)) \subset (gof)^{-1}(H) $}
+    Let $x$ be an arbitrary element $(gof)^{-1}(H)$ and (traverse statements in reverse order)
+    \begin{align*}
+        x \in (g \circ f)^{-1}(H) & \iff (g \circ f)(x) \in H 
+            && \text{(By definition of inverse image)} \\
+        & \iff g(f(x)) \in H
+            && \text{(By definition of composition)} \\
+        & \iff f(x) \in g^{-1}(H) 
+            && \text{(By definition of inverse image for } g \text{)} \\
+        & \iff x \in f^{-1}(g^{-1}(H)) 
+            && \text{(By definition of inverse image for } f \text{)}
+    \end{align*}
+    \subsection*{Conclusion}
+    Thus, as Case 1,2 holds $(gof)^{-1}(H) = f^{-1}(g^{-1}(H))$ holds.
+\end{proof}
 \section*{Question 4}
+Prove that $n^3+5n$ is divisible by 6 for all $n \in \mathbb{N}$; skipping too easy
 \section*{Question 5}
-\section*{Question 6}
-\section*{Question 7}
+Conjecture a formula for the sum of the first $n$ odd natural numbers $1+3+...+(2n-1)$ Prove via induction. \[
+    P(n) = \sum^n_{i=1}{(2i-1)} = n^2
+\]
+\begin{proof}
+    Let $P(n) = \sum^n_{i=1}{(2i-1)} = n^2$ \\
+    Observe\[ 
+        P(1) = 1 = 1^2
+    \]
+    Thus $P(1)$ holds \\
+    Suppose $P(k), k \in \mathbb{N}$ holds. Thus, \[
+        P(k) = \sum^k_{i=1}{(2i-1)} = k^2
+    \]
+    Add $2(k+1)-1 = 2k+1$ to both sides of the eqution
+    \begin{align*}
+        \sum^k_{i=1}{(2i-1)} + (2k+1) = k^2 + (2k+1) \\
+        \sum^{k+1}_{i=1}{(2i-1)} = k^2+2k+1
+    \end{align*}
+    Observe \[
+        P(k+1): \sum^{k+1}_{i=1}{(2i-1)} = (k+1)^2 = k^2+2k+1
+    \]
+    Thus $P(k+1)$ holds. \\
+    By PMI $P(n)$ holds $\forall ~n \in \mathbb{N}$
+\end{proof}
 
 \end{document}

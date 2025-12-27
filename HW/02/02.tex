@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amscd,amssymb,mathrsfs,tikz}
+\usepackage{latexsym,epsf,epsfig}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\sU}{\mathscr U}
+\usepackage[left=1.2in, right=1.2in, top=1in, bottom=1in]{geometry}
+%The above set the parameters adjust the margins. There are many ways to do this, and frankly, what is above is not the best. However, it will work the time being.
+\usepackage{sectsty}
+
+
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{soul}% for underlines
+\usepackage{xcolor,colortbl} % for cell colors
+\usepackage{changepage,threeparttable} % for wide tables
+
+\usepackage{hyperref}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{graphicx}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{ MATH 301: Homework 2}
+\author{ Aren Vista }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+\section*{Question 1}
+Prove Theorem 1.3.4 (b) \\
+If a set $A$ with $m \in \mathbb{N}$ elements and $C \subseteq A$ is a set with one element
+then $A-C$ is a set with $m-1$ elements
+\begin{proof}
+    Suppose a set $A$ with $m \in \mathbb{N}$ elements \[
+        A = \{a_1, a_2, ..., a_{m-1}, a_m\} \implies |A| = m
+    \]
+    Suppose $C \subseteq A$ is a set with one element \[
+        C = \{a\}, a \in A
+    \]
+    Observe a is an arbtrary element of A \\
+    WLOG let $a=a_m$ s.t. \[
+        C = \{a_m\}
+    \]
+    Thus \[
+        A-C = \{a_1, a_2, ..., a_{m-1}\} \implies |A-C| = m-1
+    \]
+\end{proof}
+\section*{Question 2}
+Prove Theorem 1.3.4 (c) \\
+If $C$ is an infinite set and $B$ is a finite set \\
+Then $C-B$ is an infinite set \\
+Recall an infinite set is a set which is not finite (defn.) \\
+\begin{proof}
+    Suppose $C$ is an infinite set \[
+        C = \{c_1, c_2, ...\}
+    \]
+    Suppose $B$ is a finite set \[
+        B = \{b_1, b_2, ..., b_n\}, n \in \mathbb{N}
+    \]
+    Suppose for the sake of contradiction $C-B$ is finite s.t \[
+        C-B = \{x_1, x_2, ..., x_m\} m \in \mathbb{N}
+    \]
+    Observe at most $C \cap B$ must be finite (n number of elements) by definition of set intersection \[
+        C \cap B = \{b_1, b_2, ..., b_n\}
+    \]
+    By rearangement of the principle of exclusion \[
+        C = C-B \cup (C \cap B)
+    \]
+    If $C-B$ is finite and  $C \cap B$ is finite then $C$ must be finite. This is a logical inconsistency. \\
+    Thus, C-B must be infinite.
+\end{proof}
+
+
+\section*{Question 3}
+\section*{Question 4}
+\section*{Question 5}
+\section*{Question 6}
+
+\end{document}
