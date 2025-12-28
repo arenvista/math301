@@ -79,10 +79,80 @@ Recall an infinite set is a set which is not finite (defn.) \\
     Thus, C-B must be infinite.
 \end{proof}
 
-
 \section*{Question 3}
+Prove that if $x$ is a rational number and $y$ is an irrational number, then $x+y$ is an irrational number. \\
+If in addition $x \neq 0$ then show that $xy$ is an irrational number.
+\begin{proof}
+    Suppose $x$ is a rational number and $y$ is an irrational number \\
+    Suppose for the sake of contradiction $x+y$ is a rational number. \\
+    Then given $m,n \in {Z}$ \[
+        x+y = \frac{m}{n}
+    \]
+    By defn. $x,k,p \in \mathbb{Q} \implies x = \frac{k}{p}$ \\
+    Thus
+    \begin{align*}
+        \frac{k}{p} + y = \frac{m}{n} \\
+        y = \frac{m}{n} - \frac{k}{p} \\
+        y = \frac{mp}{np} - \frac{kn}{pn} \\
+        y = \frac{mp-kn}{np} \\
+    \end{align*}
+    By set inclusion of integers, $mp-kn, np \in \mathbb {Z}$. This would imply $y$ is rational. \\
+    This is a logical inconsistency, thus $x+y$ is irrational.
+\end{proof}
+
 \section*{Question 4}
+Modify the proof of Theorem 2.1.4 \\
+Show that there does not exist a rational number $t$ so that $t^2 = 3$ \\
+\begin{proof}
+    Let $t \in \mathbb{Q}$ \\
+    Suppose for the sake of contracdiction $t^2 = 3$ \\
+    Let $x,y \in \mathbb{Z}$, y defn of $t = \frac{x}{y}$, where $x,y$ are the lowest possible factors of $t$ \\
+    Thus
+    \begin{align*}
+        (\frac{x}{y})^2 = 3 \\
+        \frac{x^2}{y^2} = 3 \\
+        x^2 = 3y^2 \\
+    \end{align*}
+    Notice $x^2$ is a multiple of 3 \\
+    By properties of prime \[
+        3|x^2 \implies 3|x
+    \]
+    Thus for some $k \in \mathbb{Z}$ \[
+        x^2 = (3k)^2 = 3y^2 
+    \]
+    Thus $3k = y^2$ \\
+    This concludes $y|3$ and $x|3$. \\
+    Note, we stated $x,y$ are the lowest possible factors of $t$ implying there does not exist any more common factors which could reduced $x,y$ \\
+    This is a logical inconsistency, this there can not exist a $t \in \mathbb{Q}$ s.t. $t^2 = 3$
+\end{proof}
+
 \section*{Question 5}
+Recall the \textbf{Triangle Inequality} \\
+If $a,b \in \mathbb{R}$ \\
+Then $|a+b| \leq |a| + |b|$ \\
+Prove this inequality holds iff $ab \geq 0$ \\
+Statement P:$|a+b| \leq |a| + |b| \iff ab \geq 0$
+\subsubsection*{Case 1: $a$ and $b$ have the same sign}
+$a$ and $b$ have the same sign $\implies ab \geq 0$:
+Observe
+\begin{itemize}
+    \item[] $a$ and $b$ are positive \\ $\implies |a+b| \equiv a+b \iff a+b \leq |a|+|b| \iff |a+b| \leq |a| + |b|$
+    \item[] $a$ and $b$ are negative \\ $\implies |(-a)+(-b)| = |-(a+b)| \equiv a+b \iff a+b \leq |a|+|b| \iff |a+b| \leq |a| + |b|$
+\end{itemize}
+
+\subsubsection*{Case 2: $a=0 \lor b=0$}
+$a=0 \lor b=0 \implies ab \geq 0$
+Observe
+\begin{itemize}
+    \item[] If $a=0$ \\ $\implies |0+b| = |b| \equiv b \iff b \leq 0+|b| \iff |a+b| \leq |a| + |b|$
+    \item[] If $b=0$ \\ $\implies |0+a| = |a| \equiv a \iff a \leq 0+|a| \iff |a+b| \leq |a| + |b|$
+\end{itemize}
+
+\subsection*{Conclusion}
+Thus By Case 1,2 $|a+b| \leq |a| + |b| \iff ab \geq 0$ holds
+
 \section*{Question 6}
+Show that if $a,b \in \mathbb{R}$ and $a \neq b$ \\
+Then there exists $\epsilon$-neighborhoods $U$ of $a$ and $V$ of $b$ such that $U \cap V = \emptyset$
 
 \end{document}
