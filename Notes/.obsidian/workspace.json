@@ -199,7 +199,7 @@
                   "type": "markdown",
                   "state": {
                     "file": "1766973264-EXXS.md",
-                    "mode": "preview",
+                    "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
@@ -210,9 +210,9 @@
           }
         ],
         "direction": "vertical",
-        "x": 1943,
+        "x": 4143,
         "y": 61,
-        "width": 2217,
+        "width": 907,
         "height": 996,
         "maximize": false,
         "zoom": 0
@@ -221,6 +221,16 @@
   },
   "active": "a451d8d52dc50cf4",
   "lastOpenFiles": [
+    "1767051933-CKKJ.md~",
+    "1767051933-CKKJ.md",
+    "1766973264-EXXS.md~",
+    "1766973264-EXXS.md",
+    "1766975367-NRVZ.md~",
+    "[Triangle Inequality](1766975367-NRVZ..md",
+    "assets/imgs/triange_inequality.png",
+    "assets/imgs",
+    "assets",
+    "1766975367-NRVZ.md",
     "Main.md~",
     "1766975074-QDMH.md",
     "1766975071-QLXW.md",
@@ -233,8 +243,6 @@
     "1766975024-OCSX.md",
     "Main.md",
     "Master.md",
-    "1766973264-EXXS.md~",
-    "1766973264-EXXS.md",
     "1766974687-YHMG.md",
     "1766974687-YHMG.md~",
     "1766962952-MAQA.md",
@@ -250,12 +258,6 @@
     "1766969835-implications.md",
     "1766969820-implications.md",
     "1766963059-MASZ.md~",
-    "[1766965420-ESMM.md",
-    "1766968627-217-theorem---rules-of-inequality.md~",
-    "1766968211-ordering-on-mathbbr.md~",
-    "[1766961657-ZUWT.md",
-    "1766968605-ordering-on-mathbbr.md~",
-    "1766968291--ordering-on-mathbbr.md",
     "Untitled.canvas"
   ]
 }
