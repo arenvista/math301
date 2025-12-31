@@ -155,4 +155,40 @@ Thus By Case 1,2 $|a+b| \leq |a| + |b| \iff ab \geq 0$ holds
 Show that if $a,b \in \mathbb{R}$ and $a \neq b$ \\
 Then there exists $\epsilon$-neighborhoods $U$ of $a$ and $V$ of $b$ such that $U \cap V = \emptyset$
 
+\begin{proof} Suppose $a, b \in \mathbb{R}$ with $a \neq b$. \\
+    This implies the distance between them is strictly positive, i.e., $|a-b| > 0$. \\
+    We choose a radius $\epsilon$ defined as half the distance between the points:
+    \[
+        \epsilon = \frac{|a-b|}{2}
+    \]
+    Since $|a-b| > 0$, it follows that $\epsilon > 0$. \\
+    Let $U$ and $V$ be the $\epsilon$-neighborhoods of $a$ and $b$ respectively:
+    \begin{align*}
+        U &= \{x \in \mathbb{R} : |x-a| < \epsilon \} \\
+        V &= \{y \in \mathbb{R} : |y-b| < \epsilon \}
+    \end{align*}
+    We claim that $U \cap V = \emptyset$. \\
+    To prove this by contradiction, assume that $U \cap V \neq \emptyset$. \\
+    Then there exists an element $z \in \mathbb{R}$ such that $z \in U$ and $z \in V$. \\
+    By the definition of the neighborhoods, this implies:
+    \[
+        |z-a| < \epsilon \quad \text{and} \quad |z-b| < \epsilon
+    \]
+    Now, consider the distance between $a$ and $b$. By the Triangle Inequality:
+    \[
+        |a-b| = |(a-z) + (z-b)| \leq |a-z| + |z-b|
+    \]
+    Using the property $|a-z| = |z-a|$ and substituting our inequalities for $z$:
+    \[
+        |a-b| < \epsilon + \epsilon = 2\epsilon
+    \]
+    However, recall our choice of $\epsilon = \frac{|a-b|}{2}$  \\
+    This implies $2\epsilon = |a-b|$. Substituting this back into the inequality yields:
+    \[
+        |a-b| < |a-b|
+    \]
+    This is a contradiction (a number cannot be strictly less than itself). \\
+    Therefore, our assumption that such a $z$ exists must be false.
+    Thus, $U \cap V = \emptyset$.
+\end{proof}
 \end{document}
