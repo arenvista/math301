@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amscd,amssymb,mathrsfs,tikz}
+\usepackage{latexsym,epsf,epsfig}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\sU}{\mathscr U}
+\usepackage[left=1.2in, right=1.2in, top=1in, bottom=1in]{geometry}
+%The above set the parameters adjust the margins. There are many ways to do this, and frankly, what is above is not the best. However, it will work the time being.
+\usepackage{sectsty}
+
+
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{soul}% for underlines
+\usepackage{xcolor,colortbl} % for cell colors
+\usepackage{changepage,threeparttable} % for wide tables
+
+\usepackage{hyperref}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{graphicx}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{ MATH 301: Quiz l}
+\author{ Aren Vista }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+\section*{Question 1}
+\textbf{Theorem:} If $S$ and $T$ are denumerable, disjoint sets, then $S \cup T$ is denumerable.
+
+\begin{proof}
+    Suppose $S$ and $T$ are denumerable. By definition, there exist bijective functions:
+    \[ f: \mathbb{N} \rightarrow S \quad \text{and} \quad g: \mathbb{N} \rightarrow T \]
+    To show $S \cup T$ is denumerable, we must construct a bijection $h: \mathbb{N} \rightarrow S \cup T$.
+    
+    Define $h: \mathbb{N} \rightarrow S \cup T$ as:
+    \[
+        h(n) = \begin{cases} 
+            f\left(\frac{n}{2}\right) & \text{if } n \text{ is even} \\
+            g\left(\frac{n+1}{2}\right) & \text{if } n \text{ is odd} 
+        \end{cases}
+    \]
+    Clearly $S,T$ must be disjoint; otherwise $\exists ~n_1, n_2 \in \mathbb{N}, n_1 \neq n_2 \ni h(n_1) = f(n_1) = h(n_2) = g(n_2)$\\
+    For the sake of the proof we must presume $S,T$ to be disjoint s.t $S \cap T = \emptyset$\\
+
+    We must show that $h$ is both surjective and injective.
+
+    \vspace{1em}
+    \noindent \textbf{1. Surjectivity (onto):} \\
+    We want to show $\forall y \in S \cup T, \exists n \in \mathbb{N}$ such that $h(n) = y$.
+    \begin{itemize}
+        \item \textbf{Case 1:} Let $y \in S$. Since $f$ is surjective, there exists $k \in \mathbb{N}$ such that $f(k) = y$. Let $n = 2k$. Then $n$ is even, and:
+        \[ h(n) = f\left(\frac{2k}{2}\right) = f(k) = y \]
+        \item \textbf{Case 2:} Let $y \in T$. Since $g$ is surjective, there exists $k \in \mathbb{N}$ such that $g(k) = y$. Let $n = 2k - 1$. Then $n$ is odd, and:
+        \[ h(n) = g\left(\frac{(2k - 1) + 1}{2}\right) = g\left(\frac{2k}{2}\right) = g(k) = y \]
+    \end{itemize}
+    Thus, $h$ is surjective.
+
+    \vspace{1em}
+    \noindent \textbf{2. Injectivity (one-to-one):} \\
+    We want to show that $h(n_1) = h(n_2) \implies n_1 = n_2$. Suppose $h(n_1) = h(n_2) = y$.
+    
+    \begin{itemize}
+        \item \textbf{Case 1: Same Parity.}
+        \begin{itemize}
+            \item If $n_1, n_2$ are both even, then $f(\frac{n_1}{2}) = f(\frac{n_2}{2})$. Since $f$ is injective, $\frac{n_1}{2} = \frac{n_2}{2} \implies n_1 = n_2$.
+            \item If $n_1, n_2$ are both odd, then $g(\frac{n_1+1}{2}) = g(\frac{n_2+1}{2})$. Since $g$ is injective, $\frac{n_1+1}{2} = \frac{n_2+1}{2} \implies n_1 = n_2$.
+        \end{itemize}
+        
+        \item \textbf{Case 2: Mixed Parity.} \\
+        Suppose one is even and one is odd (e.g., $n_1$ even, $n_2$ odd).
+        Then $h(n_1) \in \text{Im}(f) = S$ and $h(n_2) \in \text{Im}(g) = T$.
+        Since $S$ and $T$ are disjoint ($S \cap T = \emptyset$), $h(n_1) \neq h(n_2)$.
+        Therefore, $h(n_1) = h(n_2)$ is impossible if parities differ.
+    \end{itemize}
+    Thus, $h$ is injective.
+
+    \vspace{1em}
+    Since $h$ is both surjective and injective, it is a bijection. Therefore, $S \cup T$ is denumerable.
+\end{proof}
+
+\section*{Question 2}
+\textbf{Proposition:} Let $c > 1$ and $m, n \in \mathbb{N}$. Then $c^m > c^n \iff m > n$.
+
+\begin{proof}
+    Let $c > 1$ and $m, n \in \mathbb{N}$. We prove the biconditional by proving both directions separately.
+
+    \vspace{1em}
+    \noindent \textbf{Direction 1: $(\Longleftarrow)$} \\
+    \textit{Prove that if $m > n$, then $c^m > c^n$.} \\
+    Suppose $m > n$. Then we can write $m = n + k$ for some integer $k \geq 1$.\\
+    Consider the expression for $c^m$:
+    \[ c^m = c^{n+k} = c^n \cdot c^k \]
+    Since $c > 1$ and $k \geq 1$, it follows that $c^k > 1$.\\
+    Because $c > 1$, we know $c^n$ is positive ($c^n > 0$). Multiplying the inequality $c^k > 1$ by $c^n$ gives:
+    \begin{align*}
+        c^k &> 1 \\
+        c^n \cdot c^k &> c^n \cdot 1 \\
+        c^{n+k} &> c^n \\
+        c^m &> c^n
+    \end{align*}
+    Thus, $m > n \implies c^m > c^n$.
+
+    \vspace{1em}
+    \noindent \textbf{Direction 2: $(\Longrightarrow)$} \\
+    \textit{Prove that if $c^m > c^n$, then $m > n$.}
+    
+    We proceed by contradiction (using the Trichotomy Law). 
+    Assume $c^m > c^n$, but suppose for the sake of contradiction that $m \ngtr n$. 
+    This leaves two cases: $m = n$ or $m < n$.
+
+    \begin{itemize}
+        \item \textbf{Case 1: $m = n$.} \\
+        If $m = n$, then obviously $c^m = c^n$. 
+        This contradicts the hypothesis that $c^m > c^n$.
+
+        \item \textbf{Case 2: $m < n$.} \\
+        If $m < n$, then by the result we proved in Direction 1 (swapping $m$ and $n$), we must have $c^m < c^n$.
+        This explicitly contradicts the hypothesis that $c^m > c^n$.
+    \end{itemize}
+
+    Since both $m = n$ and $m < n$ lead to contradictions, it must be true that $m > n$.
+
+    \vspace{1em}
+    \noindent \textbf{Conclusion:} \\
+    We have shown both directions:
+    \begin{enumerate}
+        \item $m > n \implies c^m > c^n$
+        \item $c^m > c^n \implies m > n$
+    \end{enumerate}
+    Therefore, $c^m > c^n \iff m > n$.
+\end{proof}
+
+\end{document}

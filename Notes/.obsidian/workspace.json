@@ -13,25 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1766973264-EXXS.md",
+                "file": "1767051933-CKKJ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1766973264-EXXS"
+              "title": "1767051933-CKKJ"
             }
           },
           {
             "id": "b91232ae1091908b",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "1766962878-RPBP.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1766962878-RPBP"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,15 +198,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "a451d8d52dc50cf4",
+  "active": "b91232ae1091908b",
   "lastOpenFiles": [
+    "1766962952-MAQA.md",
+    "1767051933-CKKJ.md",
     "1766973264-EXXS.md",
     "1766975032-ONRK.md",
     "1766973264-EXXS.md~",
     "1767053195-BYCC.md~",
     "1767053195-BYCC.md",
     "1767051933-CKKJ.md~",
-    "1767051933-CKKJ.md",
     "1766975367-NRVZ.md~",
     "[Triangle Inequality](1766975367-NRVZ..md",
     "assets/imgs/triange_inequality.png",
@@ -221,7 +227,6 @@
     "Master.md",
     "1766974687-YHMG.md",
     "1766974687-YHMG.md~",
-    "1766962952-MAQA.md",
     "4913",
     "Chapter_2.md",
     "Chapter_2.md~",
